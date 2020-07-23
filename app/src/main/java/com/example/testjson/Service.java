@@ -2,8 +2,6 @@ package com.example.testjson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.json.JSONException;
-
 import java.io.IOException;
 
 import javax.security.auth.callback.Callback;
