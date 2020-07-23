@@ -23,11 +23,14 @@ public class Service implements Callback {
                 .url("https://jsonplaceholder.typicode.com/posts/1")
                 .get()
                 .build();
+
+        //通信処理
         Response response = client.newCall(request).execute();
 
         //取得結果のBodyを文字列として取り出し
         final String jsonStr = response.body().string();
 
+        //パース処理
         ObjectMapper mapper = new ObjectMapper();
         Data data = mapper.readValue(jsonStr, Data.class);
 
