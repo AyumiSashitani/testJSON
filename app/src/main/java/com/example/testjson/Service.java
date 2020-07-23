@@ -3,10 +3,8 @@ package com.example.testjson;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import javax.security.auth.callback.Callback;
 
@@ -16,7 +14,7 @@ import okhttp3.Response;
 
 public class Service implements Callback {
     //通信処理
-    public Data execute() throws IOException, JSONException {
+    public Data execute() throws IOException {
         //Client作成
         OkHttpClient client = new OkHttpClient();
 
@@ -32,15 +30,6 @@ public class Service implements Callback {
 
         ObjectMapper mapper = new ObjectMapper();
         Data data = mapper.readValue(jsonStr, Data.class);
-
-        //Dataオブジェクト生成
-//        Data data = new Data();
-
-        //取得結果をDataにセット
-//        data.setUserId(json.getString("userId"));
-//        data.setId(json.getString("id"));
-//        data.setBody(json.getString("title"));
-//        data.setTitle(json.getString("body"));
 
         return data;
     }
