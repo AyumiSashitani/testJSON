@@ -11,7 +11,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class Service implements Callback {
-    //通信処理
+
     public Data execute() throws IOException {
         //Client作成
         OkHttpClient client = new OkHttpClient();
